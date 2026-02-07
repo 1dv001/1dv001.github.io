@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Cerca eQSL</title>
+</head>
+<body>
+
+<h1>Cerca la tua eQSL</h1>
+
+<p>Inserisci il tuo nominativo radio</p>
+
+<input type="text" id="call" placeholder="ES: IK0ABC">
+<button onclick="cerca()">Cerca</button>
+
+<div id="risultati"></div>
+
+<script>
+function cerca() {
+  const call = document.getElementById("call").value.toUpperCase();
+  const img = "eqsl/" + call + "/" + call + ".png";
+  document.getElementById("risultati").innerHTML =
+    `<a href="${img}" download>
+       <img src="${img}" style="max-width:300px;">
+     </a>`;
+}
+</script>
+
+</body>
+</html>
